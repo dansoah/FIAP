@@ -1,0 +1,14 @@
+Configuração inicial switch:
+enable
+configure terminal
+hostname <nome>
+interface <interface>
+ip address <ip> <máscara subrede>
+no shutdown
+
+Define gateway:
+ip default gateway <gateway>
+
+Salvando:
+copy startup-config
+copy running-config startup-config
