@@ -1,0 +1,31 @@
+Configuração inicial:
+enable
+configure terminal
+hostname R_WAN_ACME
+
+Interface 1:
+interface fastethernet 0/0
+ip address 10.0.0.254 255.0.0
+no shutdown
+
+Interface 2:
+interface fastethernet 0/1
+ip address 11.0.0.254 255.0.0
+no shutdown
+
+Interface 3:
+interface fastethernet 0/0/0
+ip address 12.0.0.254 255.0.0
+no shutdown
+
+Interface 4:
+interface fastethernet 0/1/0
+ip address 13.0.0.254 255.0.0
+no shutdown
+
+exit
+
+exit
+
+salvando:
+wr
