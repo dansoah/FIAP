@@ -14,11 +14,49 @@ int main(){
 }
 
 void rodaContador(){
-    int contador = 0;
+
+     
+    int contador_4 = 0;
+    int contador_3 = 0;
+    int contador_2 = 0;
+    int contador_1 = 0;
+      delay_ms(100);
+      
     while(1){
-        mostraNumero(contador,1);
-        delay_ms(1000);
-        contador++;
+
+        mostraNumero(contador_1,4);
+        mostraNumero(contador_2,3);
+        mostraNumero(contador_3,2);
+        mostraNumero(contador_4,1);
+        delay_ms(10);
+        
+        contador_1++;
+        if(contador_1 > 9){
+            contador_1 = 0;
+            contador_2++;
+        }
+        
+        if(contador_2 > 9){
+        
+            contador_2 = 0;
+            contador_3++;
+        
+        }
+        
+        if(contador_3 > 9){
+        
+            contador_3 = 0;
+            contador_4 ++;
+        
+        }
+        
+        if(contador_4 > 9){
+             contador_1 = 0;
+             contador_2 = 0;
+             contador_3 = 0;
+             contador_4 = 0;
+        }
+
     }
 
 }
@@ -44,6 +82,18 @@ void mostraNumero(int numero, int display){
           delay_ms (1);
           porta.ra3 = 0;
           break;
+        case 3:
+          PORTD = converterNumero(numero);
+          porta.ra4 = 1;
+          delay_ms (1);
+          porta.ra4 = 0;
+          break;
+        case 4:
+          PORTD = converterNumero(numero);
+          porta.ra5 = 1;
+          delay_ms (1);
+          porta.ra5 = 0;
+          break;
 
     }
 
@@ -55,7 +105,7 @@ void mostraNumero(int numero, int display){
 int converterNumero(int numero){
     switch(numero){
       case 0:
-          return 0b00000110;
+          return 0b00111111;
       case 1:
           return 0b00000110;
       case 2:
