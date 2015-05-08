@@ -134,4 +134,7 @@ void setup(){
 
   trisd = 0;
   portd = 255;
+  trisa = 0b00011111;
+     adcon0 = 0b00010001;  //Define AN2 como sinal de entrada (Bits 5 - 3)
+     adcon1 = 0b01000011;
 }
