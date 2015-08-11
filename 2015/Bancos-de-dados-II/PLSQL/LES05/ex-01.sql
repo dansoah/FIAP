@@ -1,0 +1,24 @@
+-- EX 5.1
+
+--script
+DROP TABLE MESSAGES;
+CREATE TABLE MESSAGES(
+  RESULTS VARCHAR(80)
+);
+
+--exercicio
+-- a
+BEGIN
+
+  FOR i IN 1..10
+  LOOP
+    IF i NOT IN(6,8) THEN
+      INSERT INTO MESSAGES VALUES ('Message #' || i);
+    END IF;
+  END LOOP;
+  
+  -- b
+  COMMIT;
+END;
+-- c
+SELECT * FROM MESSAGES;
